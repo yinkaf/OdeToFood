@@ -12,7 +12,7 @@ Imports OdeToFood
         Dim controller As New HomeController()
 
         ' Act
-        Dim result As ViewResult = DirectCast(controller.Index(), ViewResult)
+        Dim result As ViewResult = DirectCast(controller.Index(""), ViewResult)
 
         ' Assert
         Assert.IsNotNull(result)

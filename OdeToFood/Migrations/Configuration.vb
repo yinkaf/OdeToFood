@@ -33,6 +33,12 @@ Namespace Migrations
                     .Name = "Smaka", .City = "Gothenburg", .Country = "Sweden", .Reviews = New List(Of RestaurantReview)() From {New RestaurantReview() With {.Body = "Nice food", .Rating = 11, .Reviewer = "Bob The Builder"}}
               })
 
+            For i = 1 To 1000
+                context.Restaurants.AddOrUpdate(Function(r) r.Name,
+                                                New Restaurant() With {.Name = i.ToString(), .City = "NoWhere", .Country = "USA"})
+
+            Next
+
         End Sub
         '    .Reviews = New List(Of RestaurantReview)() With {
         ''                       New RestaurantReview() With {.Rating = 9, .Body = "Great food!!"}

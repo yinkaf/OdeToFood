@@ -51,5 +51,4 @@ End Using
 </div>
 
 @Section Scripts 
-    @Scripts.Render("~/bundles/jqueryval")
 End Section

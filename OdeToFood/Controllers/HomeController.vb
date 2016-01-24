@@ -11,6 +11,9 @@
         Dim model = _db.Restaurants.OrderByDescending(Function(r) r.Reviews.Average(Function(review) review.Rating)).
                     Where(Function(r) searchTerm Is Nothing Or r.Name.StartsWith(searchTerm)).
                     Select(Function(r) New RestaurantListViewModel() With {.Id = r.Id, .Name = r.Name, .City = r.City, .Country = r.Country, .CountOfReviews = r.Reviews.Count()})
+        If Request.IsAjaxRequest Then
+            Return PartialView("_Restaurants", model)
+        End If
         Return View(model)
     End Function
     Function About() As ActionResult

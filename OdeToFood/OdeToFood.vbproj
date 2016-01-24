@@ -229,6 +229,7 @@
     <Content Include="Views\Review\_Reviews.vbhtml" />
     <Content Include="Views\Review\Create.vbhtml" />
     <Content Include="Views\Review\Edit.vbhtml" />
+    <Content Include="Views\Home\_Restaurants.vbhtml" />
     <None Include="Views\Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
