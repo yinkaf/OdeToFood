@@ -8,7 +8,8 @@ Public Module BundleConfig
                     "~/Scripts/jquery-{version}.js",
                     "~/Scripts/jquery-ui-{version}.js",
                     "~/Scripts/jquery.unobtrusive*",
-                    "~/Scripts/jquery-validate*"
+                    "~/Scripts/jquery-validate*",
+                    "~/Scripts/otf.js"
                    ))
 
         bundles.Add(New ScriptBundle("~/bundles/jquery").Include(

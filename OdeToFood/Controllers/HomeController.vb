@@ -2,7 +2,12 @@
     Inherits System.Web.Mvc.Controller
 
     Dim _db As OdeToFoodDb = New OdeToFoodDb()
-
+    Function Autocomplete(term As String) As ActionResult
+        Dim model = _db.Restaurants.Where(Function(r) r.Name.StartsWith(term)).
+            Take(10).
+            Select(Function(r) New With {.label = r.Name})
+        Return Json(model, JsonRequestBehavior.AllowGet)
+    End Function
     Function Index(searchTerm As String) As ActionResult
         'Dim model = From r In _db.Restaurants
         '            Order By r.Reviews.Average(Function(review) review.Rating) Descending
